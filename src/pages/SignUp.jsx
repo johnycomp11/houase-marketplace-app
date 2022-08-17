@@ -65,7 +65,8 @@ function SignUp() {
             type="text"
             className="nameInput"
             placeholder="Name"
-            id={name}
+            id='name'
+            value = {name}
             onChange={onChange}
           />
 
@@ -73,12 +74,14 @@ function SignUp() {
             type="email"
             className="emailInput"
             placeholder="Email"
-            id={email}
+            id='email'
+            value = {email}
             onChange={onChange}
           />
 
           <div className="passwordInputDiv">
             <input
+              //If user clicks show password, show text.
               type={showPassword ? "text" : "password"}
               className="passwordInput"
               placeholder="Password"

@@ -33,7 +33,8 @@ function SignIn() {
             type="email"
             className="emailInput"
             placeholder="Email"
-            id={email}
+            id= 'email'
+            value= {email}
             onChange={onChange}
           />
         
