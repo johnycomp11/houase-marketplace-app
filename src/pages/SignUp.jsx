@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
+import OAuth from "../components/OAuth";
 import { toast } from "react-toastify";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
@@ -119,6 +120,8 @@ function SignUp() {
             </button>
           </div>
         </form>
+
+        <OAuth />
 
         <Link to="/sign-up" className="registerLink">
           Sign In Instead
