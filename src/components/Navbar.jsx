@@ -43,7 +43,7 @@ function Navbar() {
                 pathMatchRoute("/offers")
                   ? "navbarListItemNameActive"
                   : "navbarListName"
-              }>Offer</p>
+              }>Offers</p>
           </li>
           <li className="navbarListItem" onClick={() => navigate("/profile")}>
             <PersonOutlineIcon

@@ -14,8 +14,7 @@ import { toast } from "react-toastify";
 import Spiinner from "../components/Spinner";
 import ListingItem from "../components/ListingItem";
 
-
-function Offers() {
+function Category() {
   const [listings, setListings] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -30,7 +29,7 @@ function Offers() {
         //create query to find where type == category name in listingRef of db
         const q = query(
           listingsRef,
-          where("offer", "==", true),
+          where("type", "==", params.categoryName),
           orderBy("timestamp", "desc"),
           limit(10)
         );
@@ -58,13 +57,15 @@ function Offers() {
       }
     };
     fetchListings();
-  }, []);
+  }, [params.categoryName]);
 
   return (
     <div className="categoryName">
       <header>
         <p className="pageHeader">
-          Offers
+          {params.categoryName === "rent"
+            ? "Places For Rent"
+            : "Places For Sale"}
         </p>
       </header>
       {loading ? (
@@ -90,4 +91,4 @@ function Offers() {
   );
 }
 
-export default Offers
+export default Category;
